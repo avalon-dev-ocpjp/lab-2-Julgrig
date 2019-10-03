@@ -21,33 +21,42 @@ public interface Action extends Runnable, AutoCloseable {
         switch (action) {
 
             case "copy":
-                try (FileCopyAction fcopy = new FileCopyAction()){
+                try (FileCopyAction fcopy = new FileCopyAction()) {
                     fcopy.run();
                 } catch (Exception ex) {
-            Logger.getLogger(Action.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                
+                    Logger.getLogger(Action.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
                 break;
             case "move":
-               try(FileMoveAction fmove = new FileMoveAction()){
-                fmove.run();
-               } catch (Exception ex) {
-            Logger.getLogger(Action.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                try (FileMoveAction fmove = new FileMoveAction()) {
+                    fmove.run();
+                } catch (Exception ex) {
+                    Logger.getLogger(Action.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 break;
             case "create":
-                try(FileCreateAction fcreate = new FileCreateAction()){
-                fcreate.run();
+                try (FileCreateAction fcreate = new FileCreateAction()) {
+                    fcreate.run();
                 } catch (Exception ex) {
-            Logger.getLogger(Action.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                    Logger.getLogger(Action.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 break;
             case "delete":
-                try(FileDeleteAction fdelete = new FileDeleteAction()){
-                fdelete.run();
+                try (FileDeleteAction fdelete = new FileDeleteAction()) {
+                    fdelete.run();
                 } catch (Exception ex) {
-            Logger.getLogger(Action.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                    Logger.getLogger(Action.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                break;
+            case "size":
+                FileReadSizeAction fileReadSizeAction = new FileReadSizeAction();
+                fileReadSizeAction.run();
+                break;
+
+            case "info":
+                FileInfoAction fileInfoAction = new FileInfoAction();
+                fileInfoAction.run();
                 break;
 
         }

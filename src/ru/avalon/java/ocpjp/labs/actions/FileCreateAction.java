@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class FileCreateAction implements Action{
     String file = "Exam808_SampleQuestion.pdf";
-    String path = "D:\\Users\\Bozhenkov\\lab2\\";
+    String path = "C:\\Users\\Alexander\\Desktop\\Yulia\\politech\\Oracle\\lab2\\";
 public void create() throws IOException{
     File f = new File(path, file);
     if(f.isFile()){

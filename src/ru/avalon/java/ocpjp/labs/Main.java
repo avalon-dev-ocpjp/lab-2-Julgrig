@@ -74,6 +74,13 @@ public class Main extends ConsoleUI<Commands> {
             /*
                  * TODO №9 Обработайте необработанные команды
              */
+            case size:
+                cmd.start("size");
+                break;
+
+            case info:
+                cmd.start("info");
+                break;
         }
     }
 
