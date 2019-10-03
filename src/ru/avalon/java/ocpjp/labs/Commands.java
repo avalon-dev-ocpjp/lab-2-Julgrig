@@ -8,8 +8,7 @@ public enum Commands {
     copy,
     exit,
     create,
-    delete
-    /*
-     * TODO №8 К текущему списку команд, добавьте ещё две команды
-     */
+    delete,
+    size,
+    info
 }
